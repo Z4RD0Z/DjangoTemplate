@@ -119,3 +119,35 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# LOGGING SETTINGS
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'large': {
+            'format': 
+                '%(asctime)s  %(levelname)s  %(process)d  %(pathname)s ' + 
+                    ' %(funcName)s  %(lineno)d  %(message)s  '
+        },
+        'tiny': {
+            'format': '%(asctime)s  %(message)s  '
+        }
+    },
+    'handlers': {
+        'logfile': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'when': 'midnight',
+            'interval': 1,
+            'filename': os.path.join(LOG_DIR, '{{project_name}}.log'),
+            'formatter': 'large',
+        },
+    },
+    'loggers': {
+        'www-logger': {
+            'handlers': ['logfile', ],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
