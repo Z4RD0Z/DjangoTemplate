@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    enviroment:
+      MYSQL_DATABASE: "Test"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password_root"
+    ports: -"3307:3306"
+    expose: -"3306"
+    volumes: -my-db:/var/lb/mysql
+volums:
+  my-db:
