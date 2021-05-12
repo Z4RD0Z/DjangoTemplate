@@ -1,0 +1,10 @@
+{
+  "project_name": "your-project-name-here",
+  "project_dirname": "{{ cookiecutter.project_name | slugify(separator='') }}",
+  "python_version": [
+    3.8,
+    3.9
+  ],
+  "db": "mysql",
+  "db_port": 3306
+}
