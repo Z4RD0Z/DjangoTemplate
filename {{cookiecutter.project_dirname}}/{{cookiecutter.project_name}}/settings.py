@@ -74,7 +74,16 @@ WSGI_APPLICATION = "{{cookiecutter.project_name}}.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = "DB settings here"
+DATABASES = {
+    'default': {
+        'ENGINE': 'CHANGE ENGINE HERE',
+        'NAME': 'Test',
+        'USER': 'root',
+        'PASSWORD': 'password_root',
+        'HOST': 'localhost',
+        'PORT': 3306,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
