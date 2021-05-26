@@ -17,13 +17,18 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
+LOG_DIR = "/tmp"
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 ALLOWED_HOSTS = []
 
 # Secret Key
 SECRET_KEY = "!!!DJANGO_SECRET_KEY HERE!!!"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -69,16 +74,7 @@ WSGI_APPLICATION = "{{cookiecutter.project_name}}.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Test',
-        'USER': 'root',
-        'PASSWORD': 'password_root',
-        'HOST': 'localhost',
-        'PORT': 3306,
-    }
-}
+DATABASES = "DB settings here"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
