@@ -5,6 +5,10 @@
     3.8,
     3.9
   ],
-  "db": "mysql",
-  "db_port": 3306
+  "db": [
+    "mysql",
+    "postgres"
+  ],
+  "db_port": 3306,
+  "database_name": null
 }
